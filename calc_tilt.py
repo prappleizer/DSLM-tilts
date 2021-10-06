@@ -66,7 +66,7 @@ def ha_at(v):
 
 
 
-st.title("Dragonfly Narrowband Filter Tilt Calculator")
+st.title("DSLM Filter Tilt Calculator")
 #st.markdown("Welcome to this in-depth introduction to [...].")
 st.header("Instructions")
 st.markdown("Set the galaxy velocity and desired filter width using the side bar, then use the tilt slider to explore how the tilt affects the bandpass.")
