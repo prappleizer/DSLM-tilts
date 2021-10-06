@@ -1,5 +1,4 @@
 numpy
 matplotlib
 astropy
-mpl_toolkits
 pandas
