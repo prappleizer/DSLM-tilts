@@ -17,9 +17,9 @@ def shift(wavelen, theta, n_2, n_1) :
     return new
 
 def get_filterwidth(tilt,FOV_size,cwl, filterwidth = 8,):
-    shift_cent = shift(cwl, tilt, eff_index_of_refr_TWEAK,1)
-    shift_up   = shift(cwl, tilt+FOV_size/2., eff_index_of_refr_TWEAK,1)
-    shift_down = shift(cwl, tilt-FOV_size/2., eff_index_of_refr_TWEAK,1)
+    shift_cent = shift(cwl, tilt, 1.98,1)
+    shift_up   = shift(cwl, tilt+FOV_size/2., 1.98,1)
+    shift_down = shift(cwl, tilt-FOV_size/2., 1.98,1)
 
     low1  = (shift_cent - filterwidth/2.)
     high1 = (shift_cent + filterwidth/2.)
@@ -65,7 +65,7 @@ col4.metric(label='FOV',value=f"{fov}°",delta="")
 
 
 
-eff_index_of_refr_TWEAK = 2.1 # tweaked to fit AstroDon's values
+
 c = 300000. # km/s
 
 
