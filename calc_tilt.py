@@ -37,7 +37,7 @@ c=300000.
 
 st.title("DSLM Filter Tilt Calculator")
 st.header("Instructions")
-st.markdown("Set the galaxy velocity and desired filter width using the side bar, then use the tilt slider to explore how the tilt affects the bandpass.")
+st.markdown("Set the galaxy velocity using the side bar, then use the tilt slider to explore how the tilt affects the bandpass.")
 st.markdown("As you move to larger tilts (lower wavelength), the shaded regions shows the bandpass at the left, middle, and right hand edge of the FOV selected. This gives an idea at each tilt of how large a contiguous FOV you can observe while still catching the given line.")
 
 #st.sidebar.text_input("Galaxy Name", key="gal_name",value="")
