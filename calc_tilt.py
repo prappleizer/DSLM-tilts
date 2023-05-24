@@ -16,7 +16,7 @@ def shift(wavelen, theta, n_2, n_1) :
     new = wavelen*np.sqrt(1.-((n_1/n_2)*np.sin(theta*np.pi / 180.))**2)
     return new
 
-def get_filterwidth(tilt,FOV_size,cwl, filterwidth = 8,):
+def get_filterwidth_ha(tilt,FOV_size,cwl, filterwidth = 8,):
     shift_cent = shift(cwl, tilt, 1.98,1)
     shift_up   = shift(cwl, tilt+FOV_size/2., 1.98,1)
     shift_down = shift(cwl, tilt-FOV_size/2., 1.98,1)
@@ -30,7 +30,21 @@ def get_filterwidth(tilt,FOV_size,cwl, filterwidth = 8,):
     low3  = (shift_down - filterwidth/2.)
     high3 = (shift_down + filterwidth/2.)
     return [[low1,high1],[low2,high2],[low3,high3]]
-    
+
+def get_filterwidth_oiii(tilt,FOV_size,cwl, filterwidth = 8,):
+    shift_cent = shift(cwl, tilt, 2.12,1)
+    shift_up   = shift(cwl, tilt+FOV_size/2., 2.12,1)
+    shift_down = shift(cwl, tilt-FOV_size/2., 2.12,1)
+
+    low1  = (shift_cent - filterwidth/2.)
+    high1 = (shift_cent + filterwidth/2.)
+
+    low2  = (shift_up - filterwidth/2.)
+    high2 = (shift_up + filterwidth/2.)
+
+    low3  = (shift_down - filterwidth/2.)
+    high3 = (shift_down + filterwidth/2.)
+    return [[low1,high1],[low2,high2],[low3,high3]]    
 
 c=300000.
 
@@ -69,8 +83,8 @@ col4.metric(label='FOV',value=f"{fov}°",delta="")
 c = 300000. # km/s
 
 
-filter_bounds_ha = get_filterwidth(ha_tilt,fov,cwl=6647)
-filter_bounds_oiii = get_filterwidth(oiii_tilt,fov,cwl=5071)
+filter_bounds_ha = get_filterwidth_ha(ha_tilt,fov,cwl=6647)
+filter_bounds_oiii = get_filterwidth_oiii(oiii_tilt,fov,cwl=5071)
 
 
 
