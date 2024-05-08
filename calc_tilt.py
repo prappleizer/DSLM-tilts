@@ -65,8 +65,8 @@ nii_2_wl = 6583.45*(1+gal_vel/c)
 
 
 
-ha_tilt = st.sidebar.slider('H-alpha Filter Tilt',min_value=0.0,max_value=20.0,value=10.0,step=0.1,key='ha_tilt') 
-oiii_tilt = st.sidebar.slider('[OIII] Filter Tilt',min_value=0.0,max_value=20.0,value=10.0,step=0.1,key='oiii_tilt') 
+ha_tilt = st.sidebar.slider('H-alpha Filter Tilt',min_value=0.0,max_value=20.0,value=10.0,step=0.05,key='ha_tilt') 
+oiii_tilt = st.sidebar.slider('[OIII] Filter Tilt',min_value=0.0,max_value=20.0,value=10.0,step=0.05,key='oiii_tilt') 
 width = 0.8
 fov = st.sidebar.slider('Field of View',min_value=0.25,max_value=2.0,step=0.25,value=1.0,key='fov')
 galaxy_velocity = float(st.session_state.gal_velocity)
