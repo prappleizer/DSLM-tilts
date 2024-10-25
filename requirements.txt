@@ -1,5 +1,5 @@
-numpy
+numpy==1.23.5
+astropy==5.1
 matplotlib
-astropy
 pandas
 plotly
